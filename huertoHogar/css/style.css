@@ -1,0 +1,75 @@
+/* Estilo del navbar */
+
+.navbar-custom {
+    background-color: #F7F7F7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);; /* horizontal - vertical - desenfoque - color sombra  */
+    border: none;
+    min-height: 180px; /* Con esta logramos que el navbar sea mas "alto" */
+    padding-top: 20px; /* Espacio superior */
+    padding-bottom: 20px; /* Espacio inferior */
+}
+
+.nav-wrapper {
+    padding: 0.5rem 0;
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2.5rem; /* Espacio entre las opciones */
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.navbar-center a { /* Propiedades de los links */
+    color: #2E8B57 !important;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.navbar-center a:hover {
+    color: #333333 !important; /* Verde Esmeralda al pasar el mouse */
+}
+
+.navbar-logo-container {
+    display: flex; /* flexbox o si no no funciona nada */
+    justify-content: center; /* centramos horizontalmente */
+    align-items: center; /* centramos verticalmente todo contenido */
+    width: 100%; /* toma toda la pagina en ancho, asi es mas facil centrar */
+    margin-bottom: 5px; /* Puse este margen para separar de los links */
+}
+
+/* Para editar la imagen del logo */
+.navbar-logo {
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Estilo del footer */
+
+.footer-custom {
+    background-color: #F7F7F7;
+    padding: 40px 0 20px 0;
+    margin-top: 40px;
+}
+
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    color: #8B4513 ;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.footer-text {
+    color: #666666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
