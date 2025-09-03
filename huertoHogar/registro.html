@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huerto Hogar</title>
+    <!-- CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts de Google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
+    <!-- Material Icons para los íconos de menú -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JavaScript de Parsley -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Necesita cargar JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar , se pueden agregar/editar links, seguir logica -->
+        <nav class="navbar-custom">
+            <div class="nav-wrapper">
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                    <i class="material-icons" style="color:#2E8B57;">menu</i>
+                </a>
+                <div class="navbar-logo-container">
+                    <img src="images/logo_navbar.png" alt="Logo HuertoHogar" class="navbar-logo">
+                </div>
+                <div class="navbar-center hide-on-med-and-down">
+                    <a href="index.html">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#registro">Registro</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Menú móvil -->
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <h1 class="center">Registro de Usuario</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="card-panel" style="border-radius: 20px; padding: 32px;">
+                        <form data-parsley-validate>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Nombre" id="first_name" type="text" class="validate" required
+                                        data-parsley-required="true"
+                                        data-parsley-required-message="Debes ingresar tu nombre.">
+                                    <label for="first_name">Nombre</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Apellido" id="last_name" type="text" class="validate">
+                                    <label for="last_name">Apellido</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="address" type="text">
+                                    <label for="address">Dirección</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="text" class="datepicker" id="birthdate" required
+                                        data-parsley-required="true" data-parsley-birthdate
+                                        data-parsley-required-message="Debes ingresar tu fecha de nacimiento.">
+                                    <label for="birthdate">Fecha de nacimiento</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate" required data-parsley-type="email"
+                                        data-parsley-type-message="Debes ingresar un correo válido."
+                                        data-parsley-required-message="Debes ingresar tu correo electrónico."
+                                        data-parsley-trigger="keyup">
+                                    <label for="email">Correo electrónico</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" class="validate" required
+                                        data-parsley-specialchar
+                                        data-parsley-specialchar-message="La contraseña debe tener al menos un carácter especial."
+                                        data-parsley-minlength="6"
+                                        data-parsley-minlength-message="La contraseña debe tener al menos 6 caracteres."
+                                        data-parsley-required-message="Debes ingresar una contraseña."
+                                        data-parsley-trigger="keyup">
+                                    <label for="password">Contraseña</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="passwordConfirmar" style="margin-bottom: 5%;" type="password"
+                                        class="validate" required data-parsley-specialchar
+                                        data-parsley-equalto="#password"
+                                        data-parsley-equalto-message="Las contraseñas no coinciden."
+                                        data-parsley-required-message="Debes ingresar una contraseña."
+                                        data-parsley-trigger="keyup">
+                                    <label for="password">Repita su contraseña</label>
+                                </div>
+                                <div class="container mt-3">
+                                    <div class="col s6 center-align offset-m1">
+                                        <button class="btn" type="button" onclick="registrar()">Registrar</button>
+                                    </div>
+                                    <div class="col s6 l4 center-align offset-m1">
+                                        <button class="btn waves-effect red lighten-2" type="button"
+                                            onclick="limpiar()">Limpiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                    <h5 class="footer-title">Sección 1</h5>
+                    <p class="footer-text">Texto de relleno para la primera columna del footer.</p>
+                </div>
+                <div class="col s12 m4">
+                    <h5 class="footer-title">Sección 2</h5>
+                    <p class="footer-text">Texto de relleno para la segunda columna del footer.</p>
+                </div>
+                <div class="col s12 m4">
+                    <h5 class="footer-title">Sección 3</h5>
+                    <p class="footer-text">Texto de relleno para la tercera columna del footer.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+<!-- JavaScript Materialize-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- JavaScript que creariamos nosotros-->
+<script src="js/main.js"></script>
+
+
+
+</html>

@@ -9,9 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- CSS Principal -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
+    <!-- Fonts de Google -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
+    <!-- Material Icons para los íconos de menú -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JavaScript de Parsley -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Necesita cargar JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
 
 </head>
 
@@ -21,17 +27,29 @@
         <!-- Navbar , se pueden agregar/editar links, seguir logica -->
         <nav class="navbar-custom">
             <div class="nav-wrapper">
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                    <i class="material-icons" style="color:#2E8B57;">menu</i>
+                </a>
                 <div class="navbar-logo-container">
                     <img src="images/logo_navbar.png" alt="Logo HuertoHogar" class="navbar-logo">
                 </div>
-                <div class="navbar-center">
-                    <a href="#inicio">Inicio</a>
+                <div class="navbar-center hide-on-med-and-down">
+                    <a href="index.html">Inicio</a>
                     <a href="#productos">Productos</a>
                     <a href="#nosotros">Nosotros</a>
+                    <a href="registro.html">Registro</a>
                     <a href="#contacto">Contacto</a>
                 </div>
             </div>
         </nav>
+        <!-- Menú móvil -->
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
     </header>
 
     
@@ -67,7 +85,7 @@
 <!-- JavaScript Materialize-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- JavaScript que creariamos nosotros-->
-
+<script src="js/main.js"></script>
 
 
 </html>
