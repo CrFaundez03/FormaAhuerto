@@ -1,8 +1,26 @@
+/* Estilo general segun requisitos */
+
+/* Titulos */
+h1 {
+    color: #333333;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+h2 {
+
+}
+
+/* Links */
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 /* Estilo del navbar */
 
 .navbar-custom {
     background-color: #F7F7F7;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);; /* horizontal - vertical - desenfoque - color sombra  */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);; /* horizontal - vertical - desenfoque - color sombra  */
     border: none;
     min-height: 180px; /* Con esta logramos que el navbar sea mas "alto" */
     padding-top: 20px; /* Espacio superior */
@@ -59,6 +77,7 @@
     background-color: #F7F7F7;
     padding: 40px 0 20px 0;
     margin-top: 40px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.10); /* horizontal - vertical - desenfoque - color sombra  */
 }
 
 .footer-title {
@@ -72,4 +91,88 @@
     color: #666666;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
+}
+
+/* Mensajes de error de Parsley en rojo y destacados */
+.parsley-errors-list {
+    color: #d32f2f; /* Rojo Material Design */
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 4px;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Formateo elementos form de Materialize */
+
+/* Destacado del label del form */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-bottom: 1px solid #333333  !important;
+    box-shadow: 0 1px 0 0 #333333  !important;
+}
+
+/* label focus color form*/
+input[type="text"]:focus+label,
+input[type="email"]:focus+label,
+input[type="password"]:focus+label {
+    color: #333333 !important;
+    font-weight: bold !important;
+}
+
+/* Día seleccionado datepicker */
+.datepicker-date-display {
+  background-color: #2E8B57  !important;
+  color: #F7F7F7 !important;
+}
+
+/* Color de los botones aceptar y cancelar del datepicker*/
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+  color: #2E8B57  !important;
+  font-weight: bolder;
+}
+
+/* Fecha del calendario , lo movemos un poco por que en español
+no se ven bien los nombres*/
+
+.datepicker-controls .select-dropdown.dropdown-trigger {
+  width: 50px !important;
+  min-width: 100px !important;
+}
+
+/* Cambiando colores de los valores del dropdown del datepicker*/
+.datepicker-controls .dropdown-content li > a,
+.datepicker-controls .dropdown-content li > span {
+  color: #2E8B57  !important;
+  font-weight: bold;
+}
+
+/* Cambia el color de los valores de año en el dropdown del datepicker */
+.dropdown-content.select-dropdown li > span {
+  color: #2E8B57  !important;
+}
+
+/* Cambiamos color de botones cuando son presionados del datepicker*/
+.month-prev:active, .month-next:active {
+    background-color: #2E8B57 ;
+
+}
+
+/* Color botones materialize */
+.btn {
+    background-color: #2E8B57 !important; /* Verde Esmeralda */
+    color: #F7F7F7 !important;            /* Blanco suave para el texto */
+    font-weight: bold;
+    border-radius: 10px;                  /* Bordes redondeados */
+    box-shadow: none;                     /* Sin sombra */
+}
+
+/* Color de los toast de materialize */
+.toast {
+  background-color: #F7F7F7 !important;
+  color: #333333 !important;
+  font-weight: bold;
 }
