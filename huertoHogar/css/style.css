@@ -176,3 +176,10 @@ no se ven bien los nombres*/
   color: #333333 !important;
   font-weight: bold;
 }
+
+/* Cambiamos altura de imagenes en carousel */
+.carousel .carousel-item img {
+    object-fit: cover;          /* esto ajusta la imagen sin deformarla */
+    height: 700px !important;   /* ajusta la altura total */
+}
+
