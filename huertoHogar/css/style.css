@@ -105,6 +105,19 @@ a {
     padding-left: 0;
 }
 
+/* Formateo iconos de font awesome (usados en el footer) */
+.social-icon {
+    color: #2E8B57;
+    font-size: 2rem;
+    margin-right: 16px;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+.social-icon:hover {
+    color: #FFD700;
+}
+
+
 /* Formateo elementos form de Materialize */
 
 /* Destacado del label del form */
