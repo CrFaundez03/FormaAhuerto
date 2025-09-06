@@ -189,3 +189,39 @@ no se ven bien los nombres*/
   color: #333333 !important;
   font-weight: bold;
 }
+
+/* Cambiamos altura de imagenes en carousel */
+.carousel .carousel-item img {
+    object-fit: cover;          /* esto ajusta la imagen sin deformarla */
+    height: 700px !important;   /* ajusta la altura total */
+}
+
+
+/* Estilo de las cards de testimonios */
+.testimonial-card {
+    border-radius: 15px;
+    border-bottom: 15px solid #2E8B57 ;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.04);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.card {
+  height: 100%;  /* ocupa todo el espacio disponible en la columna */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1; /* se expande para rellenar y nivelar */
+}
+
+.testimonial-card-text {
+    font-family:'Montserrat' , sans-serif;
+}
