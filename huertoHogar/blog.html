@@ -23,6 +23,7 @@
 
 <body>
     <header>
+        <!-- Navbar , se pueden agregar/editar links, seguir logica -->
         <nav class="navbar-custom">
             <div class="nav-wrapper">
                 <a href="#" data-target="mobile-menu" class="sidenav-trigger">
@@ -34,19 +35,55 @@
                 <div class="navbar-center hide-on-med-and-down">
                     <a href="index.html">Inicio</a>
                     <a href="producto.html">Productos</a>
-                    <a href="#nosotros">Nosotros</a>
+                    <a href="nosotros.html">Nosotros</a>
                     <a href="contacto.html">Contacto</a>
-                    <a href="">Blog</a>
-                    <a href="registro.html">Registro</a>
+                    <a href="blog.html">Blog</a>
+                    <!-- Searchbar Bootstrap -->
+                    <form class="d-flex navbar-bootstrap-search" role="search"
+                        style="display:inline-flex; align-items:center; margin-left: 24px; max-width: 260px;">
+                        <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
+                            style="border-radius: 20px; border: 2px solid #2E8B57; background: #fff; color: #333; font-family: 'Montserrat', sans-serif; height: 36px; font-size: 1rem; padding-left: 36px;">
+                        <button class="btn" type="submit"
+                            style="background: #2E8B57; color: #fff; border-radius: 20px; margin-left: -52px; margin-bottom: 8px; min-width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+                            <i class="material-icons" style="vertical-align: middle;">search</i>
+                        </button>
+                    </form>
+                    <a href="registro.html" title="Iniciar sesión / Registrarse">
+                        <i class="fa fa-user" style="font-size: 1.2rem; color: #2E8B57;"></i>
+                    </a>
+                    <a href="carrito.html" title="Carrito de compras">
+                        <i class="fa fa-shopping-cart" style="font-size: 1.2rem; color: #2E8B57;"></i>
+                        Tu carrito
+                    </a>
+
+
                 </div>
             </div>
         </nav>
+        <!-- Menú móvil -->
         <ul class="sidenav" id="mobile-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="producto.html">Productos</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="registro.html">Registro</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="registro.html"> Registro/Iniciar Sesión<i class="fa fa-user"
+                        style="font-size: 1.0rem; color: #2E8B57; margin-right: -9px;"></i></a></li>
+            <li> <a href="carrito.html" title="Carrito de compras">
+                    <i class="fa fa-shopping-cart" style="font-size: 1.0rem; color: #2E8B57; margin-right: -7px;"></i>
+                    Tu carrito
+                </a></li>
+            <li>
+                <form class="d-flex navbar-bootstrap-search" role="search"
+                    style="display:inline-flex; align-items:center; margin-left: 24px; max-width: 260px;">
+                    <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
+                        style="border-radius: 20px; border: 2px solid #2E8B57; background: #fff; color: #333; font-family: 'Montserrat', sans-serif; height: 36px; font-size: 1rem; padding-left: 36px;">
+                    <button class="btn" type="submit"
+                        style="background: #2E8B57; color: #fff; border-radius: 20px; margin-left: -52px; margin-bottom: 8px; min-width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+                        <i class="material-icons" style="vertical-align: middle;">search</i>
+                    </button>
+                </form>
+            </li>
         </ul>
     </header>
 
