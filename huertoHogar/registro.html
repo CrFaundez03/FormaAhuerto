@@ -38,10 +38,28 @@
                 <div class="navbar-center hide-on-med-and-down">
                     <a href="index.html">Inicio</a>
                     <a href="producto.html">Productos</a>
-                    <a href="#nosotros">Nosotros</a>
+                    <a href="nosotros.html">Nosotros</a>
                     <a href="contacto.html">Contacto</a>
                     <a href="blog.html">Blog</a>
-                    <a href="registro.html">Registro</a>
+                    <!-- Searchbar Bootstrap -->
+                    <form class="d-flex navbar-bootstrap-search" role="search"
+                        style="display:inline-flex; align-items:center; margin-left: 24px; max-width: 260px;">
+                        <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
+                            style="border-radius: 20px; border: 2px solid #2E8B57; background: #fff; color: #333; font-family: 'Montserrat', sans-serif; height: 36px; font-size: 1rem; padding-left: 36px;">
+                        <button class="btn" type="submit"
+                            style="background: #2E8B57; color: #fff; border-radius: 20px; margin-left: -52px; margin-bottom: 8px; min-width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+                            <i class="material-icons" style="vertical-align: middle;">search</i>
+                        </button>
+                    </form>
+                    <a href="registro.html" title="Iniciar sesión / Registrarse">
+                        <i class="fa fa-user" style="font-size: 1.2rem; color: #2E8B57;"></i>
+                    </a>
+                    <a href="carrito.html" title="Carrito de compras">
+                        <i class="fa fa-shopping-cart" style="font-size: 1.2rem; color: #2E8B57;"></i>
+                        Tu carrito
+                    </a>
+
+
                 </div>
             </div>
         </nav>
@@ -49,9 +67,26 @@
         <ul class="sidenav" id="mobile-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="producto.html">Productos</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="registro.html">Registro</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="registro.html"> Registro/Iniciar Sesión<i class="fa fa-user"
+                        style="font-size: 1.0rem; color: #2E8B57; margin-right: -9px;"></i></a></li>
+            <li> <a href="carrito.html" title="Carrito de compras">
+                    <i class="fa fa-shopping-cart" style="font-size: 1.0rem; color: #2E8B57; margin-right: -7px;"></i>
+                    Tu carrito
+                </a></li>
+            <li>
+                <form class="d-flex navbar-bootstrap-search" role="search"
+                    style="display:inline-flex; align-items:center; margin-left: 24px; max-width: 260px;">
+                    <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
+                        style="border-radius: 20px; border: 2px solid #2E8B57; background: #fff; color: #333; font-family: 'Montserrat', sans-serif; height: 36px; font-size: 1rem; padding-left: 36px;">
+                    <button class="btn" type="submit"
+                        style="background: #2E8B57; color: #fff; border-radius: 20px; margin-left: -52px; margin-bottom: 8px; min-width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+                        <i class="material-icons" style="vertical-align: middle;">search</i>
+                    </button>
+                </form>
+            </li>
         </ul>
     </header>
 
@@ -59,8 +94,30 @@
         <h1 class="center">Registro de Usuario</h1>
         <div class="container">
             <div class="row">
-                <div class="col s12 m8 offset-m2">
+                <!-- Login a la izquierda -->
+                <div class="col s12 m6">
                     <div class="card-panel" style="border-radius: 20px; padding: 32px;">
+                        <h5 class="center" style="font-family: 'Playfair Display', serif; color: #8B4513;">Iniciar
+                            Sesión</h5>
+                        <form>
+                            <div class="input-field">
+                                <input id="login_email" type="email" class="validate" required>
+                                <label for="login_email">Correo electrónico</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="login_password" type="password" class="validate" required>
+                                <label for="login_password">Contraseña</label>
+                            </div>
+                            <div class="center">
+                                <button class="btn" type="submit">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Registro a la derecha -->
+                <div class="col s12 m6">
+                    <div class="card-panel" style="border-radius: 20px; padding: 32px;">
+                        <h5 class="center" style="font-family: 'Playfair Display', serif; color: #8B4513;">Registro</h5>
                         <form data-parsley-validate>
                             <div class="row">
                                 <div class="input-field col s6">
@@ -87,6 +144,8 @@
                                     <input id="email" type="email" class="validate" required data-parsley-type="email"
                                         data-parsley-type-message="Debes ingresar un correo válido."
                                         data-parsley-required-message="Debes ingresar tu correo electrónico."
+                                        data-parsley-maxlength="100"
+                                        data-parsley-maxlength-message="El correo no puede tener más de 100 carácteres."
                                         data-parsley-trigger="keyup">
                                     <label for="email">Correo electrónico</label>
                                 </div>
@@ -94,8 +153,10 @@
                                     <input id="password" type="password" class="validate" required
                                         data-parsley-specialchar
                                         data-parsley-specialchar-message="La contraseña debe tener al menos un carácter especial."
-                                        data-parsley-minlength="6"
-                                        data-parsley-minlength-message="La contraseña debe tener al menos 6 caracteres."
+                                        data-parsley-minlength="4"
+                                        data-parsley-minlength-message="La contraseña debe tener al menos 4 carácteres."
+                                        data-parsley-maxlength="10"
+                                        data-parsley-maxlength-message="La contraseña no puede tener más de 10 caracteres."
                                         data-parsley-required-message="Debes ingresar una contraseña."
                                         data-parsley-trigger="keyup">
                                     <label for="password">Contraseña</label>
@@ -107,7 +168,7 @@
                                         data-parsley-equalto-message="Las contraseñas no coinciden."
                                         data-parsley-required-message="Debes ingresar una contraseña."
                                         data-parsley-trigger="keyup">
-                                    <label for="password">Repita su contraseña</label>
+                                    <label for="passwordConfirmar">Repita su contraseña</label>
                                 </div>
                                 <div class="container mt-3">
                                     <div class="col s6 center-align offset-m1">
