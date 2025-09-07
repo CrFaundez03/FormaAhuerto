@@ -18,6 +18,11 @@ h2 {
     font-family: 'Playfair Display', serif;
 }
 
+h3 {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+}
+
 .card-panel h5 {
     font-size: 2.2rem !important;
     margin-bottom: 8px !important;
@@ -293,6 +298,24 @@ no se ven bien los nombres*/
     width: 100% !important;
     object-fit: cover;
     display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 120px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 
