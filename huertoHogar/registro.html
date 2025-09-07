@@ -106,6 +106,7 @@
                                     data-parsley-pattern="[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$"
                                     data-parsley-pattern-message="Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com"
                                     data-parsley-type-message="Debes ingresar un correo válido."
+                                    data-parsley-required="true"
                                     data-parsley-required-message="Debes ingresar tu correo electrónico."
                                     data-parsley-maxlength="100"
                                     data-parsley-maxlength-message="El correo no puede tener más de 100 carácteres."
@@ -141,6 +142,7 @@
                                 </div>
                                 <div class="input-field col s6">
                                     <input placeholder="Apellido" id="last_name" type="text" class="validate" required
+                                        data-parsley-required="true"
                                         data-parsley-required-message="Se necesita ingresar  un apellido."
                                         data-parsley-minlenght="1"
                                         data-parsley-minlength-message="Se debe de ingresar al menos un carácter."
@@ -150,7 +152,7 @@
                                     <label for="last_name">Apellido</label>
                                 </div>
                                 <div class="input-field col s12 m6">
-                                    <select id="region" required
+                                    <select id="region" required data-parsley-required="true"
                                         data-parsley-required-message="Debes seleccionar una región.">
                                         <option value="" disabled selected>Selecciona una región</option>
                                         <option value="Arica y Parinacota">Arica y Parinacota</option>
@@ -173,7 +175,7 @@
                                     <label for="region">Región</label>
                                 </div>
                                 <div class="input-field col s12 m6">
-                                    <select id="comuna" required
+                                    <select id="comuna" required data-parsley-required="true"
                                         data-parsley-required-message="Debes seleccionar una comuna.">
                                         <option value="" disabled selected>Selecciona una comuna</option>
                                         <!-- Las comunas se llenarán dinámicamente con el script de registro.js -->

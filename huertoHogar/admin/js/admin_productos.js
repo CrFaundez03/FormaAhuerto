@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 renderTabla(document.getElementById("filtro-categoria").value);
                 this.reset();
+                $(form).parsley().reset();
+                form.reset();
+                setTimeout(function () {
+                    $(form).parsley().reset();
+                    $(form).parsley().refresh();
+                    M.updateTextFields();
+                    M.FormSelect.init(document.querySelectorAll('select'));
+                }, 50);
 
                 M.updateTextFields();
                 M.FormSelect.init(document.querySelectorAll('select'));
