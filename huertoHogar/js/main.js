@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function registrar() {
-    var $form = $('form[data-parsley-validate]');
+    var $form = $('#formulario-registro');
     var parsleyForm = $form.parsley();
 
     // Valida el formulario

@@ -21,6 +21,7 @@
     <!-- Iconos de font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+
 </head>
 
 <body>
@@ -99,13 +100,22 @@
                     <div class="card-panel" style="border-radius: 20px; padding: 32px;">
                         <h5 class="center" style="font-family: 'Playfair Display', serif; color: #8B4513;">Iniciar
                             Sesión</h5>
-                        <form>
+                        <form id="form-login" data-parsley-validate>
                             <div class="input-field">
-                                <input id="login_email" type="email" class="validate" required>
+                                <input id="login_email" type="email" class="validate" required data-parsley-type="email"
+                                    data-parsley-pattern="[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$"
+                                    data-parsley-pattern-message="Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com"
+                                    data-parsley-type-message="Debes ingresar un correo válido."
+                                    data-parsley-required-message="Debes ingresar tu correo electrónico."
+                                    data-parsley-maxlength="100"
+                                    data-parsley-maxlength-message="El correo no puede tener más de 100 carácteres."
+                                    data-parsley-trigger="keyup">
                                 <label for="login_email">Correo electrónico</label>
                             </div>
                             <div class="input-field">
-                                <input id="login_password" type="password" class="validate" required>
+                                <input id="login_password" type="password" class="validate" required
+                                    data-parsley-required="true"
+                                    data-parsley-required-message="Se debe de ingresar una contraseña.">
                                 <label for="login_password">Contraseña</label>
                             </div>
                             <div class="center">
@@ -118,30 +128,84 @@
                 <div class="col s12 m6">
                     <div class="card-panel" style="border-radius: 20px; padding: 32px;">
                         <h5 class="center" style="font-family: 'Playfair Display', serif; color: #8B4513;">Registro</h5>
-                        <form data-parsley-validate>
+                        <form id="formulario-registro" data-parsley-validate>
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input placeholder="Nombre" id="first_name" type="text" class="validate" required
                                         data-parsley-required="true"
-                                        data-parsley-required-message="Debes ingresar tu nombre.">
+                                        data-parsley-required-message="Debes ingresar tu nombre."
+                                        data-parsley-maxlength="50"
+                                        data-parsley-maxlength-message="El nombre no puede tener mas de 50 carácteres."
+                                        data-parsley-trigger="keyup">
                                     <label for="first_name">Nombre</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input placeholder="Apellido" id="last_name" type="text" class="validate">
+                                    <input placeholder="Apellido" id="last_name" type="text" class="validate" required
+                                        data-parsley-required-message="Se necesita ingresar  un apellido."
+                                        data-parsley-minlenght="1"
+                                        data-parsley-minlength-message="Se debe de ingresar al menos un carácter."
+                                        data-parsley-maxlength="100"
+                                        data-parsley-maxlength-message="El apellido no puede tener mas de 100 carácteres."
+                                        data-parsley-trigger="keyup">
                                     <label for="last_name">Apellido</label>
                                 </div>
+                                <div class="input-field col s12 m6">
+                                    <select id="region" required
+                                        data-parsley-required-message="Debes seleccionar una región.">
+                                        <option value="" disabled selected>Selecciona una región</option>
+                                        <option value="Arica y Parinacota">Arica y Parinacota</option>
+                                        <option value="Tarapacá">Tarapacá</option>
+                                        <option value="Antofagasta">Antofagasta</option>
+                                        <option value="Atacama">Atacama</option>
+                                        <option value="Coquimbo">Coquimbo</option>
+                                        <option value="Valparaíso">Valparaíso</option>
+                                        <option value="Metropolitana">Metropolitana</option>
+                                        <option value="O'Higgins">O'Higgins</option>
+                                        <option value="Maule">Maule</option>
+                                        <option value="Ñuble">Ñuble</option>
+                                        <option value="Biobío">Biobío</option>
+                                        <option value="La Araucanía">La Araucanía</option>
+                                        <option value="Los Ríos">Los Ríos</option>
+                                        <option value="Los Lagos">Los Lagos</option>
+                                        <option value="Aysén">Aysén</option>
+                                        <option value="Magallanes">Magallanes</option>
+                                    </select>
+                                    <label for="region">Región</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <select id="comuna" required
+                                        data-parsley-required-message="Debes seleccionar una comuna.">
+                                        <option value="" disabled selected>Selecciona una comuna</option>
+                                        <!-- Las comunas se llenarán dinámicamente con el script de registro.js -->
+                                    </select>
+                                    <label for="comuna">Comuna</label>
+                                </div>
                                 <div class="input-field col s12">
-                                    <input id="address" type="text">
+                                    <input id="address" type="text" required data-parsley-required="true"
+                                        data-parsley-required-message="Debe de ingresar una dirección."
+                                        data-parsley-minlength="10"
+                                        data-parsley-minlength-message="Debe de ingresar una dirección valida"
+                                        data-parsley-trigger="keyup">
                                     <label for="address">Dirección</label>
                                 </div>
                                 <div class="input-field col s12">
-                                    <input type="text" class="datepicker" id="birthdate" required
-                                        data-parsley-required="true" data-parsley-birthdate
-                                        data-parsley-required-message="Debes ingresar tu fecha de nacimiento.">
+                                    <input id="rut" type="text" maxlength="9" required data-parsley-required="true"
+                                        data-parsley-required-message="Se debe de ingresar un RUT."
+                                        data-parsley-pattern="^[0-9]{7,8}[kK0-9]{1}$"
+                                        data-parsley-pattern-message="El RUT debe contener solo números y la letra K, sin puntos ni guion. Ejemplo: 12345678K o 123456789."
+                                        data-parsley-minlength="7"
+                                        data-parsley-minlength-message="El RUT debe tener al menos 7 carácteres."
+                                        data-parsley-trigger="keyup">
+                                    <label for="rut">RUT</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="text" class="datepicker" id="birthdate">
                                     <label for="birthdate">Fecha de nacimiento</label>
                                 </div>
                                 <div class="input-field col s12">
                                     <input id="email" type="email" class="validate" required data-parsley-type="email"
+                                        data-parsley-pattern="[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$"
+                                        data-parsley-pattern-message="Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com"
                                         data-parsley-type-message="Debes ingresar un correo válido."
                                         data-parsley-required-message="Debes ingresar tu correo electrónico."
                                         data-parsley-maxlength="100"
@@ -151,6 +215,8 @@
                                 </div>
                                 <div class="input-field col s12">
                                     <input id="password" type="password" class="validate" required
+                                        data-parsley-required="true"
+                                        data-parsley-required-message="Se debe de ingresar una contraseña."
                                         data-parsley-specialchar
                                         data-parsley-specialchar-message="La contraseña debe tener al menos un carácter especial."
                                         data-parsley-minlength="4"
@@ -257,6 +323,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- JavaScript que creariamos nosotros-->
 <script src="js/main.js"></script>
+<script src="js/registro.js"></script>
 
 
 
