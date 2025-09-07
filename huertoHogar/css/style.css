@@ -13,7 +13,15 @@ h1 {
     font-family: 'Playfair Display', sans-serif;
 }
 
-h2 {}
+h2 {
+    color: #333333;
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+}
 
 .card-panel h5 {
     font-size: 2.2rem !important;
@@ -261,20 +269,21 @@ no se ven bien los nombres*/
 }
 
 .card {
-    height: 100%;
-    /* ocupa todo el espacio disponible en la columna */
+    height: 100%; /* ocupa todo el espacio disponible en la columna */
     display: flex;
     flex-direction: column;
 }
 
 .card-content {
-    flex-grow: 1;
-    /* se expande para rellenar y nivelar */
+    flex-grow: 1; /* se expande para rellenar y nivelar */
 }
 
 .testimonial-card-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 
@@ -289,6 +298,24 @@ no se ven bien los nombres*/
     width: 100% !important;
     object-fit: cover;
     display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 120px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 
@@ -309,3 +336,15 @@ no se ven bien los nombres*/
     font-weight: 500;
 }
 
+<<<<<<< HEAD
+=======
+/* para centrar secciones "nosotros" */
+.section-about-us {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    margin: 40px 0;
+}
+>>>>>>> main
