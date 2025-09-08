@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function registrar() {
-    var $form = $('form[data-parsley-validate]');
+    var $form = $('#formulario-registro');
     var parsleyForm = $form.parsley();
 
     // Valida el formulario
@@ -100,4 +100,20 @@ window.Parsley.addValidator('specialchar', {
     messages: {
         es: 'La contraseña debe tener al menos un carácter especial.'
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+   //Selecciona el elemento del carrusel (todos los que tengan la clase carousel) 
+  var elems = document.querySelectorAll('.carousel');
+  var instances = M.Carousel.init(elems, {
+    fullWidth: true,
+    height: 250,    
+    indicators: true
+  });
+
+  // Autoplay cada 5 segundos
+  setInterval(function() {
+    var instance = M.Carousel.getInstance(elems[0]);
+    instance.next();
+  }, 5000);
 });

@@ -14,11 +14,14 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Iconos de font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
 
   <header>
+    <!-- Navbar , se pueden agregar/editar links, seguir logica -->
     <nav class="navbar-custom">
       <div class="nav-wrapper">
         <a href="#" data-target="mobile-menu" class="sidenav-trigger">
@@ -30,41 +33,117 @@
         <div class="navbar-center hide-on-med-and-down">
           <a href="index.html">Inicio</a>
           <a href="producto.html">Productos</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="registro.html">Registro</a>
-          <a href="#contacto">Contacto</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="blog.html">Blog</a>
+          <!-- Searchbar Bootstrap -->
+          <form class="d-flex navbar-bootstrap-search" role="search"
+            style="display:inline-flex; align-items:center; margin-left: 24px; max-width: 260px;">
+            <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
+              style="border-radius: 20px; border: 2px solid #2E8B57; background: #fff; color: #333; font-family: 'Montserrat', sans-serif; height: 36px; font-size: 1rem; padding-left: 36px;">
+            <button class="btn" type="submit"
+              style="background: #2E8B57; color: #fff; border-radius: 20px; margin-left: -52px; margin-bottom: 8px; min-width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+              <i class="material-icons" style="vertical-align: middle;">search</i>
+            </button>
+          </form>
+          <a href="registro.html" title="Iniciar sesión / Registrarse">
+            <i class="fa fa-user" style="font-size: 1.2rem; color: #2E8B57;"></i>
+          </a>
+          <a href="carrito.html" title="Carrito de compras">
+            <i class="fa fa-shopping-cart" style="font-size: 1.2rem; color: #2E8B57;"></i>
+            Tu carrito
+          </a>
+
+
         </div>
       </div>
     </nav>
-
+    <!-- Menú móvil -->
     <ul class="sidenav" id="mobile-menu">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="producto.html">Productos</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="registro.html">Registro</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="registro.html"> Registro/Iniciar Sesión<i class="fa fa-user"
+            style="font-size: 1.0rem; color: #2E8B57; margin-right: -9px;"></i></a></li>
+      <li> <a href="carrito.html" title="Carrito de compras">
+          <i class="fa fa-shopping-cart" style="font-size: 1.0rem; color: #2E8B57; margin-right: -7px;"></i>
+          Tu carrito
+        </a></li>
+      <li>
+        <form class="d-flex navbar-bootstrap-search" role="search"
+          style="display:inline-flex; align-items:center; margin-left: 24px; max-width: 260px;">
+          <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
+            style="border-radius: 20px; border: 2px solid #2E8B57; background: #fff; color: #333; font-family: 'Montserrat', sans-serif; height: 36px; font-size: 1rem; padding-left: 36px;">
+          <button class="btn" type="submit"
+            style="background: #2E8B57; color: #fff; border-radius: 20px; margin-left: -52px; margin-bottom: 8px; min-width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+            <i class="material-icons" style="vertical-align: middle;">search</i>
+          </button>
+        </form>
+      </li>
     </ul>
   </header>
 
   <main class="container">
-    <h3 class="center-align" style="margin: 30px 0;">Nuestra Tienda</h3>
-    <div class="row" id="product-list"></div>
+    <h1 class="section-title center" style="margin: 30px 0;">Nuestra Tienda</h3>
+      <div class="row" id="product-list"></div>
   </main>
 
   <footer class="footer-custom">
     <div class="container">
       <div class="row">
         <div class="col s12 m4">
-          <h5 class="footer-title">Sección 1</h5>
-          <p class="footer-text">Texto de relleno para la primera columna del footer.</p>
+          <h5 class="footer-title">Tiendas físicas y horarios</h5>
+          <p class="footer-text">
+            <b>Sede Santiago</b>: Av. Providencia 1234, Santiago. <br>Tel: +56 2 2345 6789<br>
+            <b>Sede Puerto Montt</b>: Calle Los Lagos 456, Puerto Montt. <br>Tel: +56 65 1234 5678<br>
+            <b>Sede Villarica</b>: Av. Costanera 789, Villarica. <br>Tel: +56 45 8765 4321<br>
+            <b>Sede Nacimiento</b>: Calle Principal 321, Nacimiento. <br>Tel: +56 43 5678 1234<br>
+            <b>Sede Viña del Mar</b>: Av. Libertad 654, Viña del Mar. <br>Tel: +56 32 4321 8765<br>
+            <b>Sede Valparaíso</b>: Calle Esmeralda 987, Valparaíso. <br>Tel: +56 32 8765 4321<br>
+            <b>Sede Concepción</b>: Av. O'Higgins 159, Concepción. <br>Tel: +56 41 1234 5678
+          </p>
+          <p class="footer-text" style="margin-top:12px;">
+            <b>Horario</b> : Lun - Dom 9:00 - 18:00
+          </p>
         </div>
         <div class="col s12 m4">
-          <h5 class="footer-title">Sección 2</h5>
-          <p class="footer-text">Texto de relleno para la segunda columna del footer.</p>
+          <h5 class="footer-title">Contáctanos</h5>
+          <p class="footer-text"></p>
+          <p class="footer-text" style="margin-top:12px;">
+            <b>Cotizaciones, Ventas, Dudas, Cuidados y Problemas.</b>
+          </p>
+          <p class="footer-text" style="margin-top:12px;">
+            contacto@huertohogar.cl
+          </p>
+          <p class="footer-text" style="margin-top:16px; padding-left: 20%;">
+            <a href="https://x.com/" target="_blank" rel="noopener" class="social-icon">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener" class="social-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </p>
         </div>
         <div class="col s12 m4">
-          <h5 class="footer-title">Sección 3</h5>
-          <p class="footer-text">Texto de relleno para la tercera columna del footer.</p>
+          <h5 class="footer-title">Suscríbete</h5>
+          <p class="footer-text" style="margin-top:15px;">
+            Recibe notificaciones anticipadas sobre descuentos, promociones exclusivas y el lanzamiento de
+            nuevas colecciones!
+          </p>
+          <div class="input-field ">
+            <input id="email" type="email" class="validate" required data-parsley-type="email"
+              data-parsley-type-message="Debes ingresar un correo válido."
+              data-parsley-required-message="Debes ingresar tu correo electrónico." data-parsley-trigger="keyup">
+            <label for="email">Correo electrónico</label>
+          </div>
         </div>
       </div>
     </div>
@@ -78,15 +157,15 @@
     document.addEventListener("DOMContentLoaded", function () {
       // Lista de productos con id, de momento esta con una foto de una manzana todo (hay que cambiar respecto a lo necesario)
       const products = [
-        { id: 1, name: "Manzanas Fuji", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 2, name: "Naranjas Valencia", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 3, name: "Plátanos Cavendish", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 4, name: "Zanahorias Orgánicas", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 5, name: "Espinacas Frescas", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 6, name: "Pimientos Tricolores", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 7, name: "Miel Orgánica", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 8, name: "Quinua Orgánica", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
-        { id: 9, name: "Leche Entera", price: "$1.000", img: "https://i.pinimg.com/736x/1f/96/be/1f96be83ffd0c7f1cd54cc25c7aad1c5.jpg" },
+        { id: 1, name: "Manzanas Fuji", price: "$1.000", img: "images/manzanas.jpg" },
+        { id: 2, name: "Naranjas Valencia", price: "$1.000", img: "images/naranjas_producto.png" },
+        { id: 3, name: "Plátanos Cavendish", price: "$1.000", img: "images/platano_producto.jpg" },
+        { id: 4, name: "Zanahorias Orgánicas", price: "$1.000", img: "images/zanahorias.jpg" },
+        { id: 5, name: "Espinacas Frescas", price: "$1.000", img: "images/espinacas_producto.png" },
+        { id: 6, name: "Pimientos Tricolores", price: "$1.000", img: "images/pimientos_productos.png" },
+        { id: 7, name: "Miel Orgánica", price: "$1.000", img: "images/miel_productos.png" },
+        { id: 8, name: "Quinua Orgánica", price: "$1.000", img: "images/quinoa.jpg" },
+        { id: 9, name: "Leche Entera", price: "$1.000", img: "images/leche.jpg" },
       ];
 
       const productList = document.getElementById("product-list");
