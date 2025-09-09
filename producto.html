@@ -245,15 +245,15 @@
     document.addEventListener("DOMContentLoaded", function () {
       // Lista de productos con categorías
       const products = [
-        { id: 1, name: "Manzanas Fuji", price: "$1.200", img: "images/manzanas.jpg", category: "frutas" },
-        { id: 2, name: "Naranjas Valencia", price: "$1.000", img: "images/naranjas_producto.png", category: "frutas" },
-        { id: 3, name: "Plátanos Cavendish", price: "$800", img: "images/platano_producto.jpg", category: "frutas" },
-        { id: 4, name: "Zanahorias Orgánicas", price: "$900", img: "images/zanahorias.jpg", category: "verduras" },
-        { id: 5, name: "Espinacas Frescas", price: "$700", img: "images/espinacas_producto.png", category: "verduras" },
-        { id: 6, name: "Pimientos Tricolores", price: "$1.500", img: "images/pimientos_productos.png", category: "verduras" },
-        { id: 7, name: "Miel Orgánica", price: "$5.000", img: "images/miel_productos.png", category: "organicos" },
-        { id: 8, name: "Quinua Orgánica", price: "$4.500", img: "images/quinoa.jpg", category: "organicos" },
-        { id: 9, name: "Leche Entera", price: "$950", img: "images/leche.jpg", category: "lacteos" },
+        { id: 1, name: "Manzanas Fuji", price: "$1.200", img: "images/manzanas.jpg", category: "frutas", url: "DetalleProductos/Manzana.html" },
+        { id: 2, name: "Naranjas Valencia", price: "$1.000", img: "images/naranjas_producto.png", category: "frutas", url: "DetalleProductos/Naranjas.html" },
+        { id: 3, name: "Plátanos Cavendish", price: "$800", img: "images/platano_producto.jpg", category: "frutas", url: "DetalleProductos/platano.html" },
+        { id: 4, name: "Zanahorias Orgánicas", price: "$900", img: "images/zanahorias.jpg", category: "verduras", url: "DetalleProductos/zanahoria.html" },
+        { id: 5, name: "Espinacas Frescas", price: "$700", img: "images/espinacas_producto.png", category: "verduras" , url: "DetalleProductos/espinaca.html" },
+        { id: 6, name: "Pimientos Tricolores", price: "$1.500", img: "images/pimientos_productos.png", category: "verduras", url: "DetalleProductos/Pimiento.html" },
+        { id: 7, name: "Miel Orgánica", price: "$5.000", img: "images/miel_productos.png", category: "organicos", url: "DetalleProductos/Miel.html" },
+        { id: 8, name: "Quinua Orgánica", price: "$4.500", img: "images/quinoa.jpg", category: "organicos", url: "DetalleProductos/Quinoa.html" },
+        { id: 9, name: "Leche Entera", price: "$950", img: "images/leche.jpg", category: "lacteos", url: "DetalleProductos/Leche.html" },
       ];
 
       const productList = document.getElementById("product-list");
@@ -278,7 +278,7 @@
               <div class="col s12 m6 l4">
                 <div class="card hoverable">
                   <div class="card-image">
-                    <a href="detalle.html?id=${p.id}">
+                    <a href="${p.url}">
                       <img src="${p.img}" alt="${p.name}">
                       <span class="card-title">${p.name}</span>
                     </a>
