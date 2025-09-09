@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Huerto Hogar</title>
+    <title>Huerto Hogar</title>
     <!-- CSS Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- CSS Principal -->
@@ -16,11 +15,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- JavaScript de Parsley -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Necesita cargar JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
     <!-- Iconos de font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
 
+</head>
 <body>
     <header>
         <!-- Navbar , se pueden agregar/editar links, seguir logica -->
@@ -56,7 +56,6 @@
                         Tu carrito
                     </a>
 
-
                 </div>
             </div>
         </nav>
@@ -88,11 +87,56 @@
     </header>
 
     <main class="container">
-        <h1 class="center-align" style="margin: 30px 0;">Contáctanos</h1>
-        <!-- Aquí va el formulario de contacto -->
+        <h1 class="section-title center" style="margin: 30px 0;">¿Quiénes somos?</h1>
+        <div class="row" id="product-list"></div>
     </main>
 
-    <footer class="footer-custom">
+    <div class="section" id="nosotros">
+        <div class="container">
+            <div class="row valign-wrapper">
+                <!--imagen de "nosotros" se agrega class de materialize para hacerla responsiva con sombra sutil y borde redondeado-->
+                <div class="col s12 m6">
+                    <img src="images/jardin.jpg" alt="Imagen Nosotros" class="responsive-img z-depth-2" style="border-radius: 12px;">
+                </div>
+                <div class="col s12 m6">
+                    <h2 class="center-align">Sobre Nosotros</h2>
+                    <p class="section-about-us">
+                        <i><b>HuertoHogar</b> es una tienda online dedicada a llevar la frescura y calidad de los productos del campo 
+                        directamente a la puerta de nuestros clientes en Chile. Con más de 6 años de experiencia, operamos 
+                        en más de 9 puntos a lo largo del país, incluyendo ciudades clave como Santiago, Puerto Montt, 
+                        Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción. Nuestra misión es conectar a las 
+                        familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.</i>
+                    </p>
+                </div>
+            </div>
+            <div class="row same-height">
+                <div class="col s12 m6">
+                    <h2 class="center-align">Nuestra Misión</h2>
+                    <p class="section-about-us">
+                        Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo hasta 
+                        la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega. Nos 
+                        comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores 
+                        locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable en 
+                        todos los hogares chilenos.
+                    </p>
+                </div>
+                <div class="col s12 m6">
+                    <h2 class="center-align">Nuestra Visión</h2>
+                    <p class="section-about-us">
+                        Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales en 
+                        Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la 
+                        sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional, 
+                        estableciendo un nuevo estándar en la distribución de productos agrícolas directos del productor al 
+                        consumidor. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+ <footer class="footer-custom">
         <div class="container">
             <div class="row">
                 <div class="col s12 m4">
@@ -151,15 +195,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript Materialize-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems);
-        });
-    </script>
+    
 </body>
-
 </html>
