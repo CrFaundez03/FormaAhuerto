@@ -5,17 +5,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda - Huerto Hogar</title>
-  <!-- CSS Materialize -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- CSS Principal -->
+  
   <link rel="stylesheet" href="css/style.css">
-  <!-- Fonts de Google -->
+  
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
-  <!-- Material Icons -->
+  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Iconos de font awesome -->
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* Estilos para los botones de filtrado */
+    .filter-container {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .filter-title {
+      font-weight: bold;
+      margin-right: 15px;
+      color: #2E8B57;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .filter-btn {
+      cursor: pointer;
+      margin: 5px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: white;
+      border: 1px solid #2E8B57;
+      transition: all 0.3s;
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      color: #2E8B57;
+    }
+    
+    .filter-btn.active {
+      background-color: #2E8B57;
+      color: white;
+    }
+    
+    .filter-btn:hover {
+      background-color: #2E8B57;
+      color: white;
+    }
+    
+    .filter-reset {
+      cursor: pointer;
+      margin: 5px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #f8f9fa;
+      border: 1px solid #666;
+      transition: all 0.3s;
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      color: #666;
+    }
+    
+    .filter-reset:hover {
+      background-color: #666;
+      color: white;
+    }
+    
+    .no-products {
+      text-align: center;
+      padding: 40px;
+      font-family: 'Montserrat', sans-serif;
+      color: #666;
+    }
+  </style>
 </head>
 
 <body>
@@ -86,8 +150,28 @@
   </header>
 
   <main class="container">
-    <h1 class="section-title center" style="margin: 30px 0;">Nuestra Tienda</h3>
-      <div class="row" id="product-list"></div>
+    <h1 class="section-title center" style="margin: 30px 0;">Nuestra Tienda</h1>
+    
+    <!-- Botones de filtrado por categoría -->
+    <div class="filter-container center">
+      <span class="filter-title">🥑 Filtrar por categoría:</span>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">Todos los productos</button>
+        <button class="filter-btn" data-category="frutas">Frutas Frescas</button>
+        <button class="filter-btn" data-category="verduras">Verduras Orgánicas</button>
+        <button class="filter-btn" data-category="organicos">Productos Orgánicos</button>
+        <button class="filter-btn" data-category="lacteos">Productos Lácteos</button>
+        <button class="filter-reset" id="reset-filters">Limpiar filtros</button>
+      </div>
+    </div>
+    
+    <div class="row" id="product-list"></div>
+    
+    <!-- Mensaje cuando no hay productos -->
+    <div id="no-products" class="no-products" style="display: none;">
+      <h5>No hay productos en esta categoría</h5>
+      <p>Intenta con otra categoría o vuelve a ver todos los productos.</p>
+    </div>
   </main>
 
   <footer class="footer-custom">
@@ -155,41 +239,83 @@
   <!-- Script de productos -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Lista de productos con id, de momento esta con una foto de una manzana todo (hay que cambiar respecto a lo necesario)
+      // Lista de productos con categorías
       const products = [
-        { id: 1, name: "Manzanas Fuji", price: "$1.000", img: "images/manzanas.jpg" },
-        { id: 2, name: "Naranjas Valencia", price: "$1.000", img: "images/naranjas_producto.png" },
-        { id: 3, name: "Plátanos Cavendish", price: "$1.000", img: "images/platano_producto.jpg" },
-        { id: 4, name: "Zanahorias Orgánicas", price: "$1.000", img: "images/zanahorias.jpg" },
-        { id: 5, name: "Espinacas Frescas", price: "$1.000", img: "images/espinacas_producto.png" },
-        { id: 6, name: "Pimientos Tricolores", price: "$1.000", img: "images/pimientos_productos.png" },
-        { id: 7, name: "Miel Orgánica", price: "$1.000", img: "images/miel_productos.png" },
-        { id: 8, name: "Quinua Orgánica", price: "$1.000", img: "images/quinoa.jpg" },
-        { id: 9, name: "Leche Entera", price: "$1.000", img: "images/leche.jpg" },
+        { id: 1, name: "Manzanas Fuji", price: "$1.200", img: "images/manzanas.jpg", category: "frutas" },
+        { id: 2, name: "Naranjas Valencia", price: "$1.000", img: "images/naranjas_producto.png", category: "frutas" },
+        { id: 3, name: "Plátanos Cavendish", price: "$800", img: "images/platano_producto.jpg", category: "frutas" },
+        { id: 4, name: "Zanahorias Orgánicas", price: "$900", img: "images/zanahorias.jpg", category: "verduras" },
+        { id: 5, name: "Espinacas Frescas", price: "$700", img: "images/espinacas_producto.png", category: "verduras" },
+        { id: 6, name: "Pimientos Tricolores", price: "$1.500", img: "images/pimientos_productos.png", category: "verduras" },
+        { id: 7, name: "Miel Orgánica", price: "$5.000", img: "images/miel_productos.png", category: "organicos" },
+        { id: 8, name: "Quinua Orgánica", price: "$4.500", img: "images/quinoa.jpg", category: "organicos" },
+        { id: 9, name: "Leche Entera", price: "$950", img: "images/leche.jpg", category: "lacteos" },
       ];
 
       const productList = document.getElementById("product-list");
+      const noProductsMsg = document.getElementById("no-products");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const resetButton = document.getElementById("reset-filters");
+      let currentCategory = "all";
 
-      // Generamos las cards con link a detalle.html?id=...
-      products.forEach(p => {
-        const card = `
-          <div class="col s12 m6 l4">
-            <div class="card hoverable">
-              <div class="card-image">
-                <a href="detalle.html?id=${p.id}">
-                  <img src="${p.img}" alt="${p.name}">
-                  <span class="card-title">${p.name}</span>
-                </a>
-              </div>
-              <div class="card-content">
-                <p>Precio: ${p.price}</p>
-              </div>
-              <div class="card-action">
-                <a href="detalle.html?id=${p.id}" class="green-text">Ver Detalle</a>
-              </div>
-            </div>
-          </div>`;
-        productList.innerHTML += card;
+      // Función para renderizar productos según categoría
+      function renderProducts(category = "all") {
+        productList.innerHTML = "";
+        const filteredProducts = category === "all" 
+          ? products 
+          : products.filter(p => p.category === category);
+        
+        if (filteredProducts.length === 0) {
+          noProductsMsg.style.display = "block";
+        } else {
+          noProductsMsg.style.display = "none";
+          filteredProducts.forEach(p => {
+            const card = `
+              <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                  <div class="card-image">
+                    <a href="detalle.html?id=${p.id}">
+                      <img src="${p.img}" alt="${p.name}">
+                      <span class="card-title">${p.name}</span>
+                    </a>
+                  </div>
+                  <div class="card-content">
+                    <p>Precio: ${p.price}</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="detalle.html?id=${p.id}" class="green-text">Ver Detalle</a>
+                  </div>
+                </div>
+              </div>`;
+            productList.innerHTML += card;
+          });
+        }
+      }
+
+      // Inicializar con todos los productos
+      renderProducts();
+
+      // Añadir event listeners a los botones de filtro
+      filterButtons.forEach(button => {
+        button.addEventListener("click", function() {
+          const category = this.getAttribute("data-category");
+          
+          // Actualizar clase activa
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          this.classList.add("active");
+          
+          // Filtrar productos
+          currentCategory = category;
+          renderProducts(category);
+        });
+      });
+
+      // Botón para resetear filtros
+      resetButton.addEventListener("click", function() {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        document.querySelector('[data-category="all"]').classList.add("active");
+        currentCategory = "all";
+        renderProducts("all");
       });
     });
   </script>
