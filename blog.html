@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huerto Hogar</title>
+    <title>Contacto - Huerto Hogar</title>
     <!-- CSS Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- CSS Principal -->
@@ -15,12 +16,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- JavaScript de Parsley -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Necesita cargar JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
     <!-- Iconos de font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 </head>
+
 <body>
     <header>
         <!-- Navbar , se pueden agregar/editar links, seguir logica -->
@@ -56,6 +56,7 @@
                         Tu carrito
                     </a>
 
+
                 </div>
             </div>
         </nav>
@@ -87,56 +88,54 @@
     </header>
 
     <main class="container">
-        <h1 class="section-title center" style="margin: 30px 0;">¿Quiénes somos?</h1>
-        <div class="row" id="product-list"></div>
+        <h1 class="center-align" style="margin: 30px 0;">Blog</h1>
+
+        <div class="row">
+
+            <!-- Noticia 1 -->
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title" style="font-family: 'Playfair Display', serif;">¿Qué pasa si tomo jugo
+                            verde todos los días?</span>
+                        <p style="font-family: 'Montserrat', sans-serif; margin-top:10px;">
+                            Descubre los beneficios y posibles efectos de incorporar jugos verdes en tu rutina diaria.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://www.vogue.mx/articulo/que-pasa-si-tomo-jugo-verde-todos-los-dias"
+                            target="_blank" style="color:#2E8B57; font-weight:bold;">
+                            Leer noticia completa
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noticia 2 -->
+            <div class="col s12 m6">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title" style="font-family: 'Playfair Display', serif;">Proyecto pionero
+                            promueve el bienestar de las abejas y miel orgánica en Ñuble</span>
+                        <p style="font-family: 'Montserrat', sans-serif; margin-top:10px;">
+                            Conoce cómo esta iniciativa busca proteger a las abejas mientras fomenta la producción de
+                            miel orgánica en la región.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://www.diarioconcepcion.cl/ciencia-y-sociedad/2025/07/13/proyecto-pionero-promueve-el-bienestar-de-las-abejas-y-miel-organica-en-nuble.html"
+                            target="_blank" style="color:#2E8B57; font-weight:bold;">
+                            Leer noticia completa
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <div class="section" id="nosotros">
-        <div class="container">
-            <div class="row valign-wrapper">
-                <!--imagen de "nosotros" se agrega class de materialize para hacerla responsiva con sombra sutil y borde redondeado-->
-                <div class="col s12 m6">
-                    <img src="images/jardin.jpg" alt="Imagen Nosotros" class="responsive-img z-depth-2" style="border-radius: 12px;">
-                </div>
-                <div class="col s12 m6">
-                    <h2 class="center-align">Sobre Nosotros</h2>
-                    <p class="section-about-us">
-                        <i><b>HuertoHogar</b> es una tienda online dedicada a llevar la frescura y calidad de los productos del campo 
-                        directamente a la puerta de nuestros clientes en Chile. Con más de 6 años de experiencia, operamos 
-                        en más de 9 puntos a lo largo del país, incluyendo ciudades clave como Santiago, Puerto Montt, 
-                        Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción. Nuestra misión es conectar a las 
-                        familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.</i>
-                    </p>
-                </div>
-            </div>
-            <div class="row same-height">
-                <div class="col s12 m6">
-                    <h2 class="center-align">Nuestra Misión</h2>
-                    <p class="section-about-us">
-                        Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo hasta 
-                        la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega. Nos 
-                        comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores 
-                        locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable en 
-                        todos los hogares chilenos.
-                    </p>
-                </div>
-                <div class="col s12 m6">
-                    <h2 class="center-align">Nuestra Visión</h2>
-                    <p class="section-about-us">
-                        Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales en 
-                        Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la 
-                        sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional, 
-                        estableciendo un nuevo estándar en la distribución de productos agrícolas directos del productor al 
-                        consumidor. 
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-
- <footer class="footer-custom">
+    <footer class="footer-custom">
         <div class="container">
             <div class="row">
                 <div class="col s12 m4">
@@ -177,9 +176,13 @@
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5536.629332167769!2d-70.6234142226731!3d-33.428933296413284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf62a2cb75c3%3A0x6c84dd8e2bc13a00!2sAv.%20Providencia%201234%2C%207500571%20Providencia%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e1!3m2!1ses-419!2scl!4v1757381392848!5m2!1ses-419!2scl"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col s12 m4">
-                    <h5 class="footer-title">Suscríbete</h5>
+                    <h5 class="footer-title">Suscribete</h5>
                     <p class="footer-text" style="margin-top:15px;">
                         Recibe notificaciones anticipadas sobre descuentos, promociones exclusivas y el lanzamiento de
                         nuevas colecciones!
@@ -195,6 +198,15 @@
             </div>
         </div>
     </footer>
-    
+
+    <!-- JavaScript Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
 </body>
+
 </html>

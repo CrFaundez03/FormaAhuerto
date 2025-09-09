@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda - Huerto Hogar</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
+
   <link rel="stylesheet" href="css/style.css">
-  
+
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
-  
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     /* Estilos para los botones de filtrado */
@@ -24,14 +24,14 @@
       background-color: #f8f9fa;
       border-radius: 8px;
     }
-    
+
     .filter-title {
       font-weight: bold;
       margin-right: 15px;
       color: #2E8B57;
       font-family: 'Montserrat', sans-serif;
     }
-    
+
     .filter-btn {
       cursor: pointer;
       margin: 5px;
@@ -44,17 +44,17 @@
       font-family: 'Montserrat', sans-serif;
       color: #2E8B57;
     }
-    
+
     .filter-btn.active {
       background-color: #2E8B57;
       color: white;
     }
-    
+
     .filter-btn:hover {
       background-color: #2E8B57;
       color: white;
     }
-    
+
     .filter-reset {
       cursor: pointer;
       margin: 5px;
@@ -67,12 +67,12 @@
       font-family: 'Montserrat', sans-serif;
       color: #666;
     }
-    
+
     .filter-reset:hover {
       background-color: #666;
       color: white;
     }
-    
+
     .no-products {
       text-align: center;
       padding: 40px;
@@ -151,7 +151,7 @@
 
   <main class="container">
     <h1 class="section-title center" style="margin: 30px 0;">Nuestra Tienda</h1>
-    
+
     <!-- Botones de filtrado por categoría -->
     <div class="filter-container center">
       <span class="filter-title">🥑 Filtrar por categoría:</span>
@@ -164,9 +164,9 @@
         <button class="filter-reset" id="reset-filters">Limpiar filtros</button>
       </div>
     </div>
-    
+
     <div class="row" id="product-list"></div>
-    
+
     <!-- Mensaje cuando no hay productos -->
     <div id="no-products" class="no-products" style="display: none;">
       <h5>No hay productos en esta categoría</h5>
@@ -215,6 +215,10 @@
               <i class="fab fa-whatsapp"></i>
             </a>
           </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5536.629332167769!2d-70.6234142226731!3d-33.428933296413284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf62a2cb75c3%3A0x6c84dd8e2bc13a00!2sAv.%20Providencia%201234%2C%207500571%20Providencia%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e1!3m2!1ses-419!2scl!4v1757381392848!5m2!1ses-419!2scl"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="col s12 m4">
           <h5 class="footer-title">Suscríbete</h5>
@@ -261,10 +265,10 @@
       // Función para renderizar productos según categoría
       function renderProducts(category = "all") {
         productList.innerHTML = "";
-        const filteredProducts = category === "all" 
-          ? products 
+        const filteredProducts = category === "all"
+          ? products
           : products.filter(p => p.category === category);
-        
+
         if (filteredProducts.length === 0) {
           noProductsMsg.style.display = "block";
         } else {
@@ -297,13 +301,13 @@
 
       // Añadir event listeners a los botones de filtro
       filterButtons.forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
           const category = this.getAttribute("data-category");
-          
+
           // Actualizar clase activa
           filterButtons.forEach(btn => btn.classList.remove("active"));
           this.classList.add("active");
-          
+
           // Filtrar productos
           currentCategory = category;
           renderProducts(category);
@@ -311,7 +315,7 @@
       });
 
       // Botón para resetear filtros
-      resetButton.addEventListener("click", function() {
+      resetButton.addEventListener("click", function () {
         filterButtons.forEach(btn => btn.classList.remove("active"));
         document.querySelector('[data-category="all"]').classList.add("active");
         currentCategory = "all";
