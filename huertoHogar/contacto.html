@@ -19,6 +19,85 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
     <!-- Iconos de font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contact-container {
+            padding: 2rem;
+            margin: 2rem auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-title {
+            color: #2E8B57;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-subtitle {
+            color: #666;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-large {
+            width: 100%;
+            margin-top: 1.5rem;
+            background-color: #2E8B57;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        
+        .btn-large:hover {
+            background-color: #3CB371;
+        }
+        
+        .input-field label {
+            color: #666;
+        }
+        
+        .input-field input[type=text]:focus + label,
+        .input-field input[type=email]:focus + label,
+        .input-field textarea:focus + label {
+            color: #2E8B57 !important;
+        }
+        
+        .input-field input[type=text]:focus,
+        .input-field input[type=email]:focus,
+        .input-field textarea:focus {
+            border-bottom: 1px solid #2E8B57 !important;
+            box-shadow: 0 1px 0 0 #2E8B57 !important;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .contact-info h5 {
+            color: #2E8B57;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-info p {
+            color: #666;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .contact-icon {
+            color: #2E8B57;
+            margin-right: 10px;
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,8 +134,6 @@
                         <i class="fa fa-shopping-cart" style="font-size: 1.2rem; color: #2E8B57;"></i>
                         Tu carrito
                     </a>
-
-
                 </div>
             </div>
         </nav>
@@ -88,8 +165,89 @@
     </header>
 
     <main class="container">
-        <h1 class="center-align" style="margin: 30px 0;">Contáctanos</h1>
-        <!-- Aquí va el formulario de contacto -->
+        <h1 class="center-align" style="margin: 30px 0; color: #2E8B57; font-family: 'Playfair Display', serif;">Contáctanos</h1>
+        
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="contact-container">
+                    <h4 class="contact-title">¿Tienes alguna pregunta?</h4>
+                    <p class="contact-subtitle">Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                    
+                    <form id="contact-form" data-parsley-validate>
+                        <div class="row form-section">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix contact-icon">person</i>
+                                <input id="nombre" type="text" class="validate" required
+                                    data-parsley-required-message="Por favor ingresa tu nombre">
+                                <label for="nombre">Nombre completo</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-section">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix contact-icon">email</i>
+                                <input id="email" type="email" class="validate" required
+                                    data-parsley-type="email" 
+                                    data-parsley-type-message="Debes ingresar un correo válido"
+                                    data-parsley-required-message="Por favor ingresa tu correo electrónico">
+                                <label for="email">Correo electrónico</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-section">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix contact-icon">subject</i>
+                                <input id="asunto" type="text" class="validate" required
+                                    data-parsley-required-message="Por favor ingresa un asunto">
+                                <label for="asunto">Asunto</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row form-section">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix contact-icon">message</i>
+                                <textarea id="mensaje" class="materialize-textarea" required
+                                    data-parsley-required-message="Por favor ingresa tu mensaje"
+                                    data-parsley-minlength="10"
+                                    data-parsley-minlength-message="El mensaje debe tener al menos 10 caracteres"></textarea>
+                                <label for="mensaje">Mensaje</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col s12 center">
+                                <button class="btn waves-effect waves-light btn-large" type="submit" name="action">
+                                    Enviar mensaje
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="contact-info">
+                        <h5>Otras formas de contactarnos</h5>
+                        <p><i class="material-icons contact-icon">email</i> contacto@huertohogar.cl</p>
+                        <p><i class="material-icons contact-icon">phone</i> +56 2 2345 6789</p>
+                        <p><i class="material-icons contact-icon">schedule</i> Lun - Dom: 9:00 - 18:00 hrs</p>
+                        
+                        <div class="center" style="margin-top: 20px;">
+                            <a href="https://x.com/" target="_blank" rel="noopener" class="social-icon">
+                                <i class="fab fa-x-twitter fa-2x"></i>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-icon">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a href="https://facebook.com/" target="_blank" rel="noopener" class="social-icon">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                            <a href="https://wa.me/" target="_blank" rel="noopener" class="social-icon">
+                                <i class="fab fa-whatsapp fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer-custom">
@@ -143,8 +301,7 @@
                     <div class="input-field ">
                         <input id="email" type="email" class="validate" required data-parsley-type="email"
                             data-parsley-type-message="Debes ingresar un correo válido."
-                            data-parsley-required-message="Debes ingresar tu correo electrónico."
-                            data-parsley-trigger="keyup">
+                            data-parsley-required-message="Debes ingresar tu correo electrónico." data-parsley-trigger="keyup">
                         <label for="email">Correo electrónico</label>
                     </div>
                 </div>
@@ -158,8 +315,44 @@
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             M.Sidenav.init(elems);
+            
+            // Inicializar caracteres restantes para el textarea
+            var textarea = document.getElementById('mensaje');
+            var charCount = document.createElement('div');
+            charCount.className = 'char-count';
+            charCount.style.textAlign = 'right';
+            charCount.style.color = '#666';
+            charCount.style.fontSize = '0.8rem';
+            charCount.style.marginTop = '-10px';
+            charCount.innerHTML = '0/500 caracteres';
+            
+            textarea.parentNode.appendChild(charCount);
+            
+            textarea.addEventListener('input', function() {
+                var length = this.value.length;
+                charCount.innerHTML = length + '/500 caracteres';
+                
+                if (length > 500) {
+                    charCount.style.color = 'red';
+                } else {
+                    charCount.style.color = '#666';
+                }
+            });
+            
+            // Manejar el envío del formulario
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if ($(this).parsley().isValid()) {
+                    // Simular envío del formulario
+                    M.toast({html: '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', classes: 'rounded'});
+                    this.reset();
+                    charCount.innerHTML = '0/500 caracteres';
+                    charCount.style.color = '#666';
+                }
+            });
         });
     </script>
 </body>
 
-</html>
+</html> 
