@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Espinacas Frescas - Verduras</title>
+  <!-- Importar Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Importar iconos de Google -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Tu CSS personalizado -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="green darken-2">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo">Verduras</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li>
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Menú lateral móvil -->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+
+  <!-- Contenido principal -->
+  <main class="container section">
+    <div class="card">
+      <div class="card-image">
+        <!-- Carrusel con dos imágenes vacías -->
+        <div class="carousel">
+          <a class="carousel-item" href="#one!"><img src="" alt="Imagen 1 Manzanas Fuji"></a>
+          <a class="carousel-item" href="#two!"><img src="" alt="Imagen 2 Manzanas Fuji"></a>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-title">Espinacas Frescas</span>
+        <p><strong>Código:</strong> VR002</p>
+        <p>Espinacas frescas, ricas en hierro y perfectas para ensaladas o batidos.</p>
+        <p><strong>Precio:</strong> $1.000 / 500g</p>
+      </div>
+      <div class="card-action">
+        <a href="carrito.html" class="btn green">Añadir al carrito</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer green darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="white-text">Nuestras tiendas</h5>
+          <p class="grey-text text-lighten-4">Encuéntranos en Viña del Mar, Valparaíso y Santiago.</p>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="mailto:info@frutasfrescas.cl">info@frutasfrescas.cl</a></li>
+            <li><a class="grey-text text-lighten-3" href="tel:+56912345678">+56 9 1234 5678</a></li>
+          </ul>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Suscríbete</h5>
+          <form>
+            <div class="input-field white-text">
+              <input id="email" type="email" class="white-text">
+              <label for="email">Correo electrónico</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2025 Frutas Frescas - Todos los derechos reservados
+        <a class="grey-text text-lighten-4 right" href="#!">Síguenos en redes sociales</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Importar Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Inicializar menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+      M.Sidenav.init(document.querySelectorAll('.sidenav'));
+      M.Carousel.init(document.querySelectorAll('.carousel'));
+    });
+  </script>
+</body>
+</html>
